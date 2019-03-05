@@ -59,15 +59,39 @@
 			isa = PBXGroup;
 			children = (
 				58A11D22222DA6DE00D573DD /* AppDelegate.swift */,
-				58A11D24222DA6DE00D573DD /* RegistrationViewController.swift */,
-				580A8610222DAD30005ADDC0 /* ProfileViewController.swift */,
-				580A8612222DB4D7005ADDC0 /* ValidAccounts.swift */,
-				58A11D26222DA6DE00D573DD /* Main.storyboard */,
-				58A11D29222DA6DF00D573DD /* Assets.xcassets */,
-				58A11D2B222DA6DF00D573DD /* LaunchScreen.storyboard */,
+				58A31E40222E8DF0009D3388 /* Controllers */,
+				58A31E41222E8DF8009D3388 /* Models */,
+				58A31E3F222E8DBB009D3388 /* Supporting files */,
 				58A11D2E222DA6DF00D573DD /* Info.plist */,
 			);
 			path = "Lab - Login";
+			sourceTree = "<group>";
+		};
+		58A31E3F222E8DBB009D3388 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				58A11D26222DA6DE00D573DD /* Main.storyboard */,
+				58A11D29222DA6DF00D573DD /* Assets.xcassets */,
+				58A11D2B222DA6DF00D573DD /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		58A31E40222E8DF0009D3388 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				58A11D24222DA6DE00D573DD /* RegistrationViewController.swift */,
+				580A8610222DAD30005ADDC0 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		58A31E41222E8DF8009D3388 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				580A8612222DB4D7005ADDC0 /* ValidAccounts.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
