@@ -23,13 +23,16 @@ class ProfileViewController: UIViewController {
         didSet { self.passwordLabel.text = password }
     }
     @IBOutlet weak var nameLabel: UILabel! {
-        didSet { self.nameLabel.text = name }
+        didSet {
+            self.nameLabel.text = name
+            self.navigationItem.title = name
+        }
     }
     
     // MARK: - Life cicles
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.setHidesBackButton(true, animated: true)
     }
 
 }

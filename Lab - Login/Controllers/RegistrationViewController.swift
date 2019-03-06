@@ -10,7 +10,7 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
     
-    // MARK: - Properties
+    // MARK: - Private properties
     private let segueSignInIdentifier = "SignIn"
     private let segueSignOutIdentifier = "SignOut"
     
@@ -42,7 +42,7 @@ class RegistrationViewController: UIViewController {
         
     }
     
-    // MARK: Private methods
+    // MARK: - Private methods
     private func checkAuth() -> Bool {
         
         return FakePersons.contains { (person) -> Bool in
@@ -63,28 +63,20 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc private func showKeyboard(_ notification: NSNotification) {
-        let keyboardRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        print(keyboardRect.minY)
-        print(passwordTextField.frame.maxY)
-        print(authView.frame.minY)
         
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        options: .curveEaseInOut,
                        animations: {
-                        //keyboardSize.
+                        
+                        let keyboardRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+                        
                         if keyboardRect.minY <= self.authView.frame.minY + self.passwordTextField.frame.maxY {
                             let offsetY = self.authView.frame.minY + self.passwordTextField.frame.maxY - keyboardRect.minY
                             self.authView.transform = CGAffineTransform(translationX: 0, y: -offsetY - 10)
+                            
                         }
-                        
-                        //keyboardSize
-                        
-                        //self.authView.transform = CGAffineTransform(translationX: 0, y: -50)
-                        
-        }) { (finished) in
-            
-        }
+        })
         
     }
     
@@ -95,9 +87,7 @@ class RegistrationViewController: UIViewController {
                        options: .curveEaseInOut,
                        animations: {
                             self.authView.transform = CGAffineTransform.identity
-        }) { (finished) in
-            
-        }
+        })
         
     }
     
@@ -136,6 +126,7 @@ extension RegistrationViewController {
     
 }
 
+// MARK: - UITextFieldDelegate
 extension RegistrationViewController: UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
