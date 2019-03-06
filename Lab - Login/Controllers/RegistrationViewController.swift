@@ -80,7 +80,7 @@ class RegistrationViewController: UIViewController {
         
     }
     
-    @objc private func hideKeyboard(_ notification: NSNotification) {
+    @objc private func hideKeyboard() {
         
         UIView.animate(withDuration: 0.5,
                        delay: 0,
@@ -92,7 +92,7 @@ class RegistrationViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func actionSignIn(_ sender: Any?) {
+    @IBAction func actionSignIn() {
         
         guard checkAuth() else { showAlert(); return }
         
@@ -145,7 +145,7 @@ extension RegistrationViewController: UITextFieldDelegate {
         guard let pass = passwordTextField.text, !pass.isEmpty else { return false }
         
         textField.resignFirstResponder()
-        actionSignIn(nil)
+        actionSignIn()
         
         return true
     }
