@@ -33,12 +33,8 @@ class RegistrationViewController: UIViewController {
         passwordTextField.text = FakePersons.first?.password
         
         // Add keyboard notifikations
-        NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard),
-                                               name: UIWindow.keyboardWillShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard),
-                                               name: UIWindow.keyboardWillHideNotification,
-                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showKeyboard), name: UIWindow.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIWindow.keyboardWillHideNotification, object: nil)
         
     }
     
@@ -52,41 +48,35 @@ class RegistrationViewController: UIViewController {
     }
     
     private func showAlert() {
-        let alertController = UIAlertController(title: "Alert",
-                                                message: "eMail и/или password не верный. Или поле/поля пустые. Внизу приведены возможные варианты",
-                                                preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .cancel,
-                                         handler: nil)
+        
+        let alertMessage = "eMail и/или password не верный. Или поле/поля пустые. Внизу приведены возможные варианты"
+        let alertController = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+        
     }
     
     @objc private func showKeyboard(_ notification: NSNotification) {
         
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       options: .curveEaseInOut,
-                       animations: {
-                        
-                        let keyboardRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-                        
-                        if keyboardRect.minY <= self.authView.frame.minY + self.passwordTextField.frame.maxY {
-                            let offsetY = self.authView.frame.minY + self.passwordTextField.frame.maxY - keyboardRect.minY
-                            self.authView.transform = CGAffineTransform(translationX: 0, y: -offsetY - 10)
-                            
-                        }
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            
+            let keyboardRect = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+            
+            if keyboardRect.minY <= self.authView.frame.minY + self.passwordTextField.frame.maxY {
+                let offsetY = self.authView.frame.minY + self.passwordTextField.frame.maxY - keyboardRect.minY
+                self.authView.transform = CGAffineTransform(translationX: 0, y: -offsetY - 10)
+            }
+            
         })
         
     }
     
     @objc private func hideKeyboard() {
         
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       options: .curveEaseInOut,
-                       animations: {
-                            self.authView.transform = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            self.authView.transform = CGAffineTransform.identity
         })
         
     }
@@ -101,6 +91,7 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func actionSignOut(segue: UIStoryboardSegue) {
+        
         guard segue.identifier == segueSignOutIdentifier else { return }
         let profileVC = segue.source as! ProfileViewController
         infoLabel.text = "\(profileVC.name!)" + " вышел из системы"

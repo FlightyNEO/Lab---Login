@@ -36,10 +36,3 @@ class ProfileViewController: UIViewController {
     }
 
 }
-
-// MARK: - Navigation
-extension ProfileViewController {
-    
-    
-    
-}
