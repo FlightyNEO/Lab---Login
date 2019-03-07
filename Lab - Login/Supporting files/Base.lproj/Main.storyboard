@@ -29,10 +29,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UWP-pv-row">
-                                <rect key="frame" x="273.66666666666669" y="135" width="189" height="144"/>
+                                <rect key="frame" x="293" y="154" width="150" height="106"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type eMail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2TF-ub-5K9">
-                                        <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
@@ -41,7 +41,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qdj-IM-tdI">
-                                        <rect key="frame" x="0.0" y="38" width="189" height="30"/>
+                                        <rect key="frame" x="0.0" y="38" width="150" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
@@ -49,21 +49,8 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="hM5-Av-jA7"/>
                                         </connections>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="76j-nF-Qjz">
-                                        <rect key="frame" x="0.0" y="76" width="189" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwx-RR-3o5">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="30"/>
-                                                <state key="normal" title="Forgot eMail"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRl-Ry-xtn">
-                                                <rect key="frame" x="106" y="0.0" width="83" height="30"/>
-                                                <state key="normal" title="Registration"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oH-dA-P0F">
-                                        <rect key="frame" x="0.0" y="114" width="189" height="30"/>
+                                        <rect key="frame" x="0.0" y="76" width="150" height="30"/>
                                         <state key="normal" title="Sign In"/>
                                         <connections>
                                             <action selector="actionSignIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="n5Q-8B-WC1"/>
@@ -97,32 +84,32 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Sva-br-C7R"/>
                                 <exclude reference="hUw-yO-KGp"/>
+                                <exclude reference="Sva-br-C7R"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <exclude reference="hik-aV-r0Y"/>
                                 <exclude reference="SA1-cz-Phm"/>
                                 <exclude reference="Sva-br-C7R"/>
-                                <exclude reference="hik-aV-r0Y"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="hUw-yO-KGp"/>
+                                <include reference="hik-aV-r0Y"/>
                                 <exclude reference="SA1-cz-Phm"/>
                                 <include reference="Sva-br-C7R"/>
                                 <include reference="oEU-SZ-gpw"/>
-                                <include reference="hUw-yO-KGp"/>
-                                <include reference="hik-aV-r0Y"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="hik-aV-r0Y"/>
                                 <include reference="SA1-cz-Phm"/>
                                 <exclude reference="Sva-br-C7R"/>
                                 <include reference="oEU-SZ-gpw"/>
-                                <include reference="hik-aV-r0Y"/>
                             </mask>
                         </variation>
                     </view>
