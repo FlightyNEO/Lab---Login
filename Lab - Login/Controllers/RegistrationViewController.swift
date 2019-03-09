@@ -23,6 +23,11 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var helpTextView: UITextView!
     
     // MARK: - Life cicles
+    deinit {
+        // Remove notifikations
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
